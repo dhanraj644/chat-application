@@ -1,0 +1,92 @@
+
+.navbar{
+  width: 100%;
+  height: 80px;
+  background-color: black;
+}
+.main{
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+ 
+}
+.box{
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  height: auto;
+  background-color: aliceblue;
+}
+.group{
+  margin-top: 15px;
+  padding: 5px;
+  justify-items: center;
+}
+.group>label{
+
+    font-size: 20px;
+}
+.group>input{
+
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+}
+.heading{
+  justify-items: center;
+}
+.submit{
+  margin-top: 10px;
+ width: 150px;
+ height: 40px;
+ border-radius: 5px;
+ background-color: black;
+ color: aliceblue;
+ cursor: pointer;
+}
+
+
+.sidebar-main{
+  height: 91vh;
+  width: 320px;
+  background-color: rgb(15, 15, 15);
+
+}
+
+ #msgdisplay{
+        width: 100%;
+        height: 80vh;
+        border: 1px solid rgb(12, 12, 12);
+        text-align: center;
+        /* padding-top: 20px; */
+        background-color: aliceblue;
+        overflow-y: scroll;
+    }
+    p{
+        font-size: 30px;
+        background-color: rgb(13, 14, 13);
+        color: aliceblue;
+        
+    }
+    .display-main{
+
+      width: 100%; height: 80vh; display: flex; justify-content: center; align-items: center;
+      padding-top: 5px;
+    }
+
+#main{
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}    
+#main>input{
+  width: 80%;
+  height: 50px;
+}
