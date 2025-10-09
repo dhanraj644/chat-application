@@ -23,7 +23,7 @@ const io = new Server(server, {
 
 app.use(
   cors({
-  origin: "https://chat-application-cgn6.vercel.app", 
+  origin:  "https://chat-application-cgn6.vercel.app", 
   methods: ["GET", "POST", "PUT", "DELETE"]
 })
 );
