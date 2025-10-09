@@ -11,7 +11,7 @@ const Chatbox = () => {
   useEffect(() => {
 
     axios
-      .get("https://chat-application-l275.onrender.com//chat/get")
+      .get("https://chat-application-l275.onrender.com/chat/get")
       .then((res) => {
         console.log(res.data);
           setPrivatemsg(res.data);
