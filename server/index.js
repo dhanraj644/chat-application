@@ -16,14 +16,14 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-application-lake-pi.vercel.app/",
+    origin: "chat-application-cgn6.vercel.app",
   },
   connectionStateRecovery: {},
 });
 
 app.use(
   cors({
-    origin: "https://chat-application-lake-pi.vercel.app/",
+    origin: "chat-application-cgn6.vercel.app",
   })
 );
 
