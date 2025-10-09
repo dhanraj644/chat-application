@@ -13,7 +13,7 @@ const Singup = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5001/user/create", {
+      .post("https://chat-application-l275.onrender.com/user/create", {
         name: name,
         email: email,
         password: password,
