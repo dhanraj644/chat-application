@@ -9,7 +9,7 @@ const Navbar = () => {
   const logout = () => {
     const currentid = localStorage.getItem("id");
     axios
-      .put(`http://localhost:5001/user/statusUpdate/${currentid}`)
+      .put(`https://chat-application-l275.onrender.com/user/statusUpdate/${currentid}`)
       .then((res) => {
         console.log(res);
         socket.emit("logout", currentid);
