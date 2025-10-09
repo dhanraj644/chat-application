@@ -11,7 +11,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5001/user/getUser")
+      .get("https://chat-application-l275.onrender.com/user/getUser")
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -20,7 +20,7 @@ const Sidebar = () => {
         console.log(er);
       });
     axios
-      .get("http://localhost:5001/user/getroom")
+      .get("https://chat-application-l275.onrender.com/user/getroom")
       .then((res) => {
         console.log("room data", res.data);
         setGroup(res.data);
