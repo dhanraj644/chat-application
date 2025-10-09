@@ -14,16 +14,22 @@ app.use(express.json());
 
 const server = http.createServer(app);
 
+const allowedOrigins = [
+  "https://chat-application-cgn6.vercel.app",
+  "https://chat-application-lake-pi.vercel.app",
+  "http://localhost:3000"
+];
+
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-application-cgn6.vercel.app",
+    origin: allowedOrigins,
   },
   connectionStateRecovery: {},
 });
 
 app.use(
   cors({
-  origin:  "https://chat-application-cgn6.vercel.app", 
+  origin: allowedOrigins, 
   methods: ["GET", "POST", "PUT", "DELETE"]
 })
 );
