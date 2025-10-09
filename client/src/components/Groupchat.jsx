@@ -17,7 +17,7 @@ const Groupchat = () => {
   useEffect(() => {
 
     axios
-      .get("http://localhost:5001/chat/groupchat")
+      .get("https://chat-application-l275.onrender.com/chat/groupchat")
       .then((res) => {
         // console.log(res.data)
         setDisplay(res.data);
