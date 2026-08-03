@@ -162,7 +162,7 @@ const Chatbox = () => {
             
             {isRecipientTyping ? (
               <div className="typing-indicator-chat" style={{ marginTop: "2px" }}>
-                <span>typing</span>
+                <span>{typingUserName}</span>
                 <div className="typing-dots">
                   <span></span>
                   <span></span>
