@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import socket from "./socket";
 import { Users, Hash, User, Search } from "lucide-react";
+import api from "./api";
 import "../App.css";
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
@@ -21,7 +22,7 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
   useEffect(() => {
     // Fetch users
     axios
-      .get("http://localhost:5000/user/getUser")
+      .get(`${api}/user/getUser`)
       .then((res) => {
         setData(res.data);
       })

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import socket from "./socket";
 import { PlusCircle, Key, Users, BookOpen } from "lucide-react";
-
+import api from "./api";
 const Createroom = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
@@ -14,7 +14,7 @@ const Createroom = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/user/getUser")
+      .get(`${api}/user/getUser`)
       .then((res) => {
         setData(res.data);
       })
@@ -50,7 +50,7 @@ const Createroom = () => {
     const creatorId = localStorage.getItem("id");
 
     axios
-      .post("http://localhost:5000/user/createroom", {
+      .post(`${api}/user/createroom`, {
         roomid: roomid,
         roomName: roomname,
         members: member,

@@ -1,3 +1,4 @@
+import api from "./api";
 import React, { useEffect, useState, useRef } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import socket from "./socket";
@@ -13,14 +14,13 @@ const Groupchat = () => {
   const [typingUsers, setTypingUsers] = useState({}); // maps username -> boolean
   const messagesEndRef = useRef(null);
   const typingTimeoutRef = useRef(null);
-
   const currentUserName = localStorage.getItem("name");
 
   // Fetch room details if page is refreshed or loaded directly without router state
   useEffect(() => {
     if (!location.state || id !== location.state.id) {
       axios
-        .get("http://localhost:5000/user/getroom")
+        .get(`${api}/user/getroom`)
         .then((res) => {
           const found = res.data.find((r) => r.id === id);
           setRoomDetails(found);
@@ -46,7 +46,7 @@ const Groupchat = () => {
   // Fetch message log and bind socket listeners
   useEffect(() => {
     axios
-      .get("http://localhost:5000/chat/groupchat")
+      .get(`${api}/chat/groupchat`)
       .then((res) => {
         setDisplay(res.data);
       })

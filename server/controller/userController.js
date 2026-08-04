@@ -27,6 +27,8 @@ const userLogin = async (req, res) => {
     const { email, password } = req.body;
     const data = await user.findOne({ userEmail: email });
 
+      console.log(data);
+      
     if (data == null) {
       res.status(404).json({ msg: "user is not found" });
     } else if (bcrypt.compareSync(password, data.userPassword) == false) {

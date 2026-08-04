@@ -3,14 +3,14 @@ import React from "react";
 import socket from "./socket";
 import { useNavigate } from "react-router-dom";
 import { MessageSquare, Plus, LogOut, Menu, X, User } from "lucide-react";
-
+import api from "./api";
 const Navbar = ({ toggleSidebar, sidebarOpen }) => {
   const navigate = useNavigate();
 
   const logout = () => {
     const currentid = localStorage.getItem("id");
     axios
-      .put(`http://localhost:5000/user/statusUpdate/${currentid}`)
+      .put(`${api}/user/statusUpdate/${currentid}`)
       .then((res) => {
         console.log(res);
         socket.emit("logout", currentid);

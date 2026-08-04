@@ -3,14 +3,16 @@ import { useParams } from "react-router-dom";
 import socket from "../socket";
 import axios from "axios";
 import { Send, User } from "lucide-react";
-
+import api from "../api";
 const Chatbox = () => {
+
   const { id } = useParams();
   const [msg, setMsg] = useState("");
   const [privatemsg, setPrivatemsg] = useState([]);
   const [recipient, setRecipient] = useState(null);
   const [isRecipientTyping, setIsRecipientTyping] = useState(false);
   const [typingUserName, setTypingUserName] = useState("");
+
   const messagesEndRef = useRef(null);
   const typingTimeoutRef = useRef(null);
 
@@ -20,7 +22,7 @@ const Chatbox = () => {
   // Fetch recipient details whenever id changes
   useEffect(() => {
     axios
-      .get("http://localhost:5000/user/getUser")
+      .get(`${api}/user/getUser`)
       .then((res) => {
         const found = res.data.find((u) => u.id === id);
         setRecipient(found);
@@ -37,7 +39,7 @@ const Chatbox = () => {
   // Fetch chat history and set up socket listeners
   useEffect(() => {
     axios
-      .get("http://localhost:5000/chat/get")
+      .get(`${api}/chat/get`)
       .then((res) => {
         setPrivatemsg(res.data);
       })

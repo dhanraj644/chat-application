@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { User, Mail, Lock, UserPlus } from "lucide-react";
-
+import api from "../api";
 const Singup = () => {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -16,7 +16,7 @@ const Singup = () => {
     setLoading(true);
 
     axios
-      .post("http://localhost:5000/user/create", {
+      .post(`${api}/user/create`, {
         name: name,
         email: email,
         password: password,

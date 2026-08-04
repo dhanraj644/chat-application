@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import socket from "../socket";
 import { Mail, Lock, LogIn } from "lucide-react";
+import api from "../api";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Login = () => {
     setLoading(true);
 
     axios
-      .post("http://localhost:5000/user/login", {
+      .post(`${api}/user/login`, {
         email: email,
         password: password,
       })
