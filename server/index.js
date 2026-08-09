@@ -18,7 +18,7 @@ app.use(express.json());
 const server = http.createServer(app);
 
 const allowedOrigins = [
-  "https://chat-application-lake-pi.vercel.app/"
+  "https://chat-application-lake-pi.vercel.app"
 ];
 
 const io = new Server(server, {
@@ -30,7 +30,8 @@ const io = new Server(server, {
 app.use(
   cors({
     origin: allowedOrigins, 
-    methods: ["GET", "POST", "PUT", "DELETE"]
+    methods: ["GET", "POST", "PUT", "DELETE"],
+     credentials: true
   })
 );
 
