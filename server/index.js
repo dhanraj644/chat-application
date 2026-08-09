@@ -19,7 +19,6 @@ const server = http.createServer(app);
 
 const allowedOrigins = [
   "https://chat-application-lake-pi.vercel.app/"
-    credentials: true
 ];
 
 const io = new Server(server, {
